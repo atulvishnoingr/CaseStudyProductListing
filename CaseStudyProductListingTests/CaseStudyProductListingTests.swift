@@ -5,6 +5,7 @@
 //  Created by Atul Vishnoi on 13/07/23.
 //
 
+// swiftlint:disable all
 import XCTest
 @testable import CaseStudyProductListing
 
@@ -34,3 +35,5 @@ final class CaseStudyProductListingTests: XCTestCase {
     }
 
 }
+
+// swiftlint:enable all

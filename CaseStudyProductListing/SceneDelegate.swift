@@ -5,6 +5,7 @@
 //  Created by Atul Vishnoi on 13/07/23.
 //
 
+// swiftlint:disable all
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -49,4 +50,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-
+// swiftlint:enable all

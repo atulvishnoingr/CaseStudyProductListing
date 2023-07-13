@@ -5,6 +5,7 @@
 //  Created by Atul Vishnoi on 13/07/23.
 //
 
+// swiftlint:disable all
 import XCTest
 
 final class CaseStudyProductListingUITestsLaunchTests: XCTestCase {
@@ -30,3 +31,4 @@ final class CaseStudyProductListingUITestsLaunchTests: XCTestCase {
         add(attachment)
     }
 }
+// swiftlint:enable all

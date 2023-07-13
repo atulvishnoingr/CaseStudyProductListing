@@ -18,6 +18,7 @@
 		A6EDEFB02A5FF13E00595DE5 /* CaseStudyProductListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDEFAF2A5FF13E00595DE5 /* CaseStudyProductListingTests.swift */; };
 		A6EDEFBA2A5FF13E00595DE5 /* CaseStudyProductListingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDEFB92A5FF13E00595DE5 /* CaseStudyProductListingUITests.swift */; };
 		A6EDEFBC2A5FF13E00595DE5 /* CaseStudyProductListingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDEFBB2A5FF13E00595DE5 /* CaseStudyProductListingUITestsLaunchTests.swift */; };
+		A6EDEFCD2A6026C600595DE5 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A6EDEFCF2A6026C600595DE5 /* Localizable.strings */; };
 		C31A3ADA199D4547E3C28062 /* Pods_CaseStudyProductListing.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDA6B17D78D0EC99FCB5C098 /* Pods_CaseStudyProductListing.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,8 @@
 		A6EDEFB52A5FF13E00595DE5 /* CaseStudyProductListingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CaseStudyProductListingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6EDEFB92A5FF13E00595DE5 /* CaseStudyProductListingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseStudyProductListingUITests.swift; sourceTree = "<group>"; };
 		A6EDEFBB2A5FF13E00595DE5 /* CaseStudyProductListingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseStudyProductListingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A6EDEFCE2A6026C600595DE5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A6EDEFD02A6026FD00595DE5 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ACDCE3447794B7A0E2FEB6EF /* Pods_CaseStudyProductListing_CaseStudyProductListingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaseStudyProductListing_CaseStudyProductListingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9A4378764A86F9F791BA3A3 /* Pods-CaseStudyProductListingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaseStudyProductListingTests.debug.xcconfig"; path = "Target Support Files/Pods-CaseStudyProductListingTests/Pods-CaseStudyProductListingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C07B035CC1B151A516B497A1 /* Pods_CaseStudyProductListingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CaseStudyProductListingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +136,7 @@
 				A6EDEF9E2A5FF13500595DE5 /* Main.storyboard */,
 				A6EDEFA12A5FF13B00595DE5 /* Assets.xcassets */,
 				A6EDEFA32A5FF13C00595DE5 /* LaunchScreen.storyboard */,
+				A6EDEFCF2A6026C600595DE5 /* Localizable.strings */,
 				A6EDEFA62A5FF13C00595DE5 /* Info.plist */,
 			);
 			path = CaseStudyProductListing;
@@ -265,6 +269,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = A6EDEF8C2A5FF13500595DE5;
 			productRefGroup = A6EDEF962A5FF13500595DE5 /* Products */;
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6EDEFA52A5FF13C00595DE5 /* LaunchScreen.storyboard in Resources */,
+				A6EDEFCD2A6026C600595DE5 /* Localizable.strings in Resources */,
 				A6EDEFA22A5FF13B00595DE5 /* Assets.xcassets in Resources */,
 				A6EDEFA02A5FF13500595DE5 /* Main.storyboard in Resources */,
 			);
@@ -454,6 +460,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		A6EDEFCF2A6026C600595DE5 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6EDEFCE2A6026C600595DE5 /* en */,
+				A6EDEFD02A6026FD00595DE5 /* ar */,
+			);
+			name = Localizable.strings;
+			path = /Users/atulvishnoi/CaseStudyProductListing/CaseStudyProductListing;
+			sourceTree = "<absolute>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -461,6 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -521,6 +538,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

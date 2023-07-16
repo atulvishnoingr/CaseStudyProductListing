@@ -14,7 +14,6 @@ final class ArticleCell: UITableViewCell {
 
     func configureCell(dataSource: DashboardArticle) {
         titleLabel?.text = dataSource.name
-        let animatedImage = SDAnimatedImage(named: "image.gif")
         let imageUrl = URL(string: dataSource.image)
         articleImageView?.sd_setImage(with: imageUrl)
     }

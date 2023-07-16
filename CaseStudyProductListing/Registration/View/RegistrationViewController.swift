@@ -24,13 +24,27 @@ final class RegistrationViewController: UIViewController {
         configureRouter()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        emailField?.text = ""
+        nameField?.text = ""
+        passwordField?.text = ""
+    }
+
     // MARK: - IBActions
     @IBAction private func didTapSignupButton() {
-        guard let viewModel = viewModel else { return }
-        if let errorMessage = viewModel.errorMessage.value {
-            showError(with: errorMessage)
+        view.endEditing(true)
+        guard let viewModel = viewModel,
+              viewModel.isEmailValid(value: emailField?.text ?? ""),
+              viewModel.isNameValid(value: nameField?.text ?? ""),
+              viewModel.isPasswordValid(value: passwordField?.text ?? "")
+        else {
+            if let errorMessage = viewModel?.errorMessage.value {
+                showError(with: errorMessage)
+            }
             return
         }
+
         router?.routeToDashboardScreen()
     }
 
@@ -56,27 +70,23 @@ final class RegistrationViewController: UIViewController {
 }
 
 // MARK: - TextField Delegates
-//extension RegistrationViewController: UITextFieldDelegate {
-////    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-////        true
-////    }
-//
-//    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-//        guard let viewModel = viewModel else { return true }
-//        if textField == emailField {
-//            viewModel.validateEmail(value: textField.text ?? "")
-//        } else if textField == nameField {
-//            viewModel.validateName(value: textField.text ?? "")
-//        } else {
-//            viewModel.validatePassword(value: textField.text ?? "")
-//        }
-//        return true
-//    }
-//
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//        true
-//    }
-//}
+extension RegistrationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        true
+    }
+
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        guard let viewModel = viewModel else { return true }
+        if textField == emailField {
+            _ = viewModel.isEmailValid(value: textField.text ?? "")
+        } else if textField == nameField {
+            _ = viewModel.isNameValid(value: textField.text ?? "")
+        } else {
+            _ = viewModel.isPasswordValid(value: textField.text ?? "")
+        }
+        return true
+    }
+}
 
 // MARK: - Create function
 extension RegistrationViewController {

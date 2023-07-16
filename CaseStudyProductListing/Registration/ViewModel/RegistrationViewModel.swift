@@ -9,9 +9,9 @@ import Foundation
 
 protocol RegistrationViewModelProtocol {
     var errorMessage: Observable<String?> { get set }
-    func validateEmail(value: String)
-    func validateName(value: String)
-    func validatePassword(value: String)
+    func isEmailValid(value: String) -> Bool
+    func isNameValid(value: String) -> Bool
+    func isPasswordValid(value: String) -> Bool
 }
 
 final class RegistrationViewModel: RegistrationViewModelProtocol {
@@ -21,10 +21,10 @@ final class RegistrationViewModel: RegistrationViewModelProtocol {
         self.errorMessage = Observable(message)
     }
 
-    func validateEmail(value: String) {
+    func isEmailValid(value: String) -> Bool {
         guard !value.isEmpty else {
             setError("Email is empty")
-            return
+            return false
         }
 
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
@@ -32,19 +32,25 @@ final class RegistrationViewModel: RegistrationViewModelProtocol {
         let isEmailValid = emailPred.evaluate(with: value)
         if !isEmailValid {
             setError("Please enter a valid email address")
+            return false
         }
+
+        return true
     }
 
-    func validateName(value: String) {
+    func isNameValid(value: String) -> Bool {
         if value.count < 3 {
             setError("Name should be at least 3 letters length")
+            return false
         }
+
+        return true
     }
 
-    func validatePassword(value: String) {
+    func isPasswordValid(value: String) -> Bool {
         guard !value.isEmpty else {
             setError("Password is empty")
-            return
+            return false
         }
 
         let passwordRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[d$@$!%*?&#])[A-Za-z\\dd$@$!%*?&#]{8,}"
@@ -54,6 +60,9 @@ final class RegistrationViewModel: RegistrationViewModelProtocol {
             setError(
                 "Password must have at least 8 characters with at least 1 number, 1 uppercase & 1 special character"
             )
+        return false
         }
+
+        return true
     }
 }

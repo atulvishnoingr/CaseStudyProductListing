@@ -36,7 +36,7 @@ struct NetworkManager {
 
     private func executeRequest<T: Codable>(request: URLRequest, completion: ((T?, Error?) -> Void)?) {
         let session = URLSession(configuration: .default)
-        let dataTask = session.dataTask(with: request) { (data, response, error) in
+        let dataTask = session.dataTask(with: request) { (data, _, error) in
             guard let data = data else {
                 completion?(nil, error)
                 return

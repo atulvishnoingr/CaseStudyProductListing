@@ -8,7 +8,7 @@
 import Foundation
 
 struct ArticlesResponse: Codable {
-    let status : String
+    let status: String
     let numResults: Int
     let results: [Article]
 

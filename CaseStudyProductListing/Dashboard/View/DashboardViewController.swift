@@ -86,7 +86,7 @@ extension DashboardViewController: UITableViewDataSource {
         guard let dashboardSections = dashboardDataSource?.sections else { return nil }
         return dashboardSections[section]
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var dashboardArticle: DashboardArticle?
         switch indexPath.section {

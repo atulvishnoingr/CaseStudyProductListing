@@ -7,6 +7,7 @@ target 'CaseStudyProductListing' do
 
   # Pods for CaseStudyProductListing
   pod 'SwiftLint'
+  pod 'SDWebImage'
 
   target 'CaseStudyProductListingTests' do
     inherit! :search_paths

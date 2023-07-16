@@ -6,7 +6,6 @@
 //
 
 import Foundation
-//https://fitzafful.medium.com/data-binding-in-mvvm-on-ios-714eb15e3913#:~:text=Data%20Binding%20is%20simply%20the,but%20to%20other%20patterns%20too.
 
 class Observable<T> {
 

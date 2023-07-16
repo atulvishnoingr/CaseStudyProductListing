@@ -13,6 +13,9 @@
 		A61417EA2A62053E000F8551 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61417E92A62053E000F8551 /* RegistrationRouter.swift */; };
 		A61417ED2A620607000F8551 /* DashboardModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61417EC2A620607000F8551 /* DashboardModule.swift */; };
 		A61417EF2A620B61000F8551 /* DashboardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61417EE2A620B61000F8551 /* DashboardRouter.swift */; };
+		A61417F32A640121000F8551 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61417F12A640121000F8551 /* ArticleCell.swift */; };
+		A61417F42A640121000F8551 /* ArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A61417F22A640121000F8551 /* ArticleCell.xib */; };
+		A61417F82A641742000F8551 /* UItableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61417F72A641742000F8551 /* UItableViewExtensions.swift */; };
 		A6EDEF992A5FF13500595DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDEF982A5FF13500595DE5 /* AppDelegate.swift */; };
 		A6EDEF9B2A5FF13500595DE5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDEF9A2A5FF13500595DE5 /* SceneDelegate.swift */; };
 		A6EDEF9D2A5FF13500595DE5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EDEF9C2A5FF13500595DE5 /* ViewController.swift */; };
@@ -59,6 +62,9 @@
 		A61417E92A62053E000F8551 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		A61417EC2A620607000F8551 /* DashboardModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardModule.swift; sourceTree = "<group>"; };
 		A61417EE2A620B61000F8551 /* DashboardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardRouter.swift; sourceTree = "<group>"; };
+		A61417F12A640121000F8551 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
+		A61417F22A640121000F8551 /* ArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleCell.xib; sourceTree = "<group>"; };
+		A61417F72A641742000F8551 /* UItableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UItableViewExtensions.swift; sourceTree = "<group>"; };
 		A61A00544C2017B3B6524091 /* Pods-CaseStudyProductListing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CaseStudyProductListing.debug.xcconfig"; path = "Target Support Files/Pods-CaseStudyProductListing/Pods-CaseStudyProductListing.debug.xcconfig"; sourceTree = "<group>"; };
 		A6EDEF952A5FF13500595DE5 /* CaseStudyProductListing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaseStudyProductListing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6EDEF982A5FF13500595DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +151,32 @@
 			path = Routing;
 			sourceTree = "<group>";
 		};
+		A61417F02A6400FA000F8551 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A61417F12A640121000F8551 /* ArticleCell.swift */,
+				A61417F22A640121000F8551 /* ArticleCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		A61417F52A641718000F8551 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A61417F62A641724000F8551 /* Extensions */,
+				A6EDEFC92A601E5800595DE5 /* NetworkManager */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A61417F62A641724000F8551 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A61417F72A641742000F8551 /* UItableViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		A6EDEF8C2A5FF13500595DE5 = {
 			isa = PBXGroup;
 			children = (
@@ -170,12 +202,12 @@
 		A6EDEF972A5FF13500595DE5 /* CaseStudyProductListing */ = {
 			isa = PBXGroup;
 			children = (
+				A61417F52A641718000F8551 /* Shared */,
 				A6EDEFE72A61701300595DE5 /* Scenes */,
 				A6EDEFE62A616FF500595DE5 /* Storyboards */,
 				A6EDEFE42A616FC100595DE5 /* Utils */,
 				A6EDEFD62A6163F600595DE5 /* Dashboard */,
 				A6EDEFD52A6163E900595DE5 /* Registration */,
-				A6EDEFC92A601E5800595DE5 /* NetworkManager */,
 				A6EDEF982A5FF13500595DE5 /* AppDelegate.swift */,
 				A6EDEF9A2A5FF13500595DE5 /* SceneDelegate.swift */,
 				A6EDEF9C2A5FF13500595DE5 /* ViewController.swift */,
@@ -259,6 +291,7 @@
 		A6EDEFDB2A61643500595DE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A61417F02A6400FA000F8551 /* Cells */,
 				A6EDEFE82A61711800595DE5 /* DashboardViewController.swift */,
 			);
 			path = View;
@@ -329,6 +362,7 @@
 				A6EDEF922A5FF13500595DE5 /* Frameworks */,
 				A6EDEF932A5FF13500595DE5 /* Resources */,
 				A6EDEFC82A601D5400595DE5 /* SwiftLint */,
+				C97FD115AD26BE1CB0276847 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -366,6 +400,7 @@
 				A6EDEFB12A5FF13E00595DE5 /* Sources */,
 				A6EDEFB22A5FF13E00595DE5 /* Frameworks */,
 				A6EDEFB32A5FF13E00595DE5 /* Resources */,
+				F63CDF1C2800AF3B92CDE7F6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -429,6 +464,7 @@
 				A6EDEFA52A5FF13C00595DE5 /* LaunchScreen.storyboard in Resources */,
 				A6EDEFCD2A6026C600595DE5 /* Localizable.strings in Resources */,
 				A6EDEFA22A5FF13B00595DE5 /* Assets.xcassets in Resources */,
+				A61417F42A640121000F8551 /* ArticleCell.xib in Resources */,
 				A6EDEFA02A5FF13500595DE5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +572,40 @@
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 			showEnvVarsInLog = 0;
 		};
+		C97FD115AD26BE1CB0276847 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CaseStudyProductListing/Pods-CaseStudyProductListing-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CaseStudyProductListing/Pods-CaseStudyProductListing-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CaseStudyProductListing/Pods-CaseStudyProductListing-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F63CDF1C2800AF3B92CDE7F6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CaseStudyProductListing-CaseStudyProductListingUITests/Pods-CaseStudyProductListing-CaseStudyProductListingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CaseStudyProductListing-CaseStudyProductListingUITests/Pods-CaseStudyProductListing-CaseStudyProductListingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CaseStudyProductListing-CaseStudyProductListingUITests/Pods-CaseStudyProductListing-CaseStudyProductListingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -550,7 +620,9 @@
 				A6EDEFD22A602BE800595DE5 /* NetworkManager.swift in Sources */,
 				A6EDEFD42A60B54500595DE5 /* Observable.swift in Sources */,
 				A61417ED2A620607000F8551 /* DashboardModule.swift in Sources */,
+				A61417F82A641742000F8551 /* UItableViewExtensions.swift in Sources */,
 				A6EDEFEB2A61713C00595DE5 /* RegistrationViewController.swift in Sources */,
+				A61417F32A640121000F8551 /* ArticleCell.swift in Sources */,
 				A6EDEFE02A6164E600595DE5 /* RegistrationViewModel.swift in Sources */,
 				A6EDEF9D2A5FF13500595DE5 /* ViewController.swift in Sources */,
 				A6EDEFDE2A61648200595DE5 /* DashboardViewModel.swift in Sources */,

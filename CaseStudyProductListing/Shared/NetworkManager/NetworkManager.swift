@@ -53,7 +53,7 @@ struct NetworkManager {
     }
 
     func fetchEmailedArticles(completion: FeedCompletionClosure?) {
-        let url = baseUrl + FeedType.emailed.rawValue + "1.json?api-key=\(apiKey)"
+        let url = baseUrl + FeedType.emailed.rawValue + "/1.json?api-key=\(apiKey)"
         guard let request = createRequest(for: url) else {
             completion?(nil, NetworkError.invalidUrl)
             return
@@ -61,9 +61,8 @@ struct NetworkManager {
         executeRequest(request: request, completion: completion)
     }
 
-
     func fetchSharedArticles(completion: FeedCompletionClosure?) {
-        let url = baseUrl + FeedType.shared.rawValue + "1.json?api-key=\(apiKey)"
+        let url = baseUrl + FeedType.shared.rawValue + "/1.json?api-key=\(apiKey)"
         guard let request = createRequest(for: url) else {
             completion?(nil, NetworkError.invalidUrl)
             return
@@ -72,7 +71,7 @@ struct NetworkManager {
     }
 
     func fetchViewedArticles(completion: FeedCompletionClosure?) {
-        let url = baseUrl + FeedType.viewed.rawValue + "1.json?api-key=\(apiKey)"
+        let url = baseUrl + FeedType.viewed.rawValue + "/1.json?api-key=\(apiKey)"
         guard let request = createRequest(for: url) else {
             completion?(nil, NetworkError.invalidUrl)
             return

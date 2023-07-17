@@ -58,6 +58,15 @@ private extension DashboardViewController {
         viewModel.dashboardDataSource.bind { [weak self] dataSource in
             self?.dashboardDataSource = dataSource
         }
+
+        viewModel.errorMessage.bind { [weak self] error in
+            guard let self = self, let error = error else { return }
+            let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            DispatchQueue.main.async { [weak self] in
+                self?.present(alert, animated: true, completion: nil)
+            }
+        }
     }
 
     func configureView() {

@@ -1,0 +1,6 @@
+framework module Pods_CaseStudyProductListing {
+  umbrella header "Pods-CaseStudyProductListing-umbrella.h"
+
+  export *
+  module * { export * }
+}

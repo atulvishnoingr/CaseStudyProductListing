@@ -46,7 +46,7 @@ final class DashboardViewModel: DashboardViewModelProtocol {
     func fetcDashboardArticles() {
         // Fetch Emailed Articles
         group.enter()
-        networkManager.fetchEmailedArticles { [weak self] response, error in
+        networkManager.fetchArticles(feedType: .emailed) { [weak self] response, error in
             guard let self = self else { return }
             if let error = error {
                 errorMessage.value = error.localizedDescription
@@ -63,7 +63,7 @@ final class DashboardViewModel: DashboardViewModelProtocol {
 
         // Fetch Shared Articles
         group.enter()
-        networkManager.fetchSharedArticles { [weak self] response, error in
+        networkManager.fetchArticles(feedType: .shared) { [weak self] response, error in
             guard let self = self else { return }
             if let error = error {
                 self.errorMessage.value = error.localizedDescription
@@ -79,7 +79,7 @@ final class DashboardViewModel: DashboardViewModelProtocol {
 
         // Fetch Viewed Articles
         group.enter()
-        networkManager.fetchViewedArticles { [weak self] response, error in
+        networkManager.fetchArticles(feedType: .viewed) { [weak self] response, error in
             guard let self = self else { return }
             if let error = error {
                 errorMessage.value = error.localizedDescription

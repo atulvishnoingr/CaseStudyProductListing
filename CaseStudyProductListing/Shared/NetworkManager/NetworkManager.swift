@@ -52,26 +52,8 @@ struct NetworkManager {
         dataTask.resume()
     }
 
-    func fetchEmailedArticles(completion: FeedCompletionClosure?) {
-        let url = baseUrl + FeedType.emailed.rawValue + "/1.json?api-key=\(apiKey)"
-        guard let request = createRequest(for: url) else {
-            completion?(nil, NetworkError.invalidUrl)
-            return
-        }
-        executeRequest(request: request, completion: completion)
-    }
-
-    func fetchSharedArticles(completion: FeedCompletionClosure?) {
-        let url = baseUrl + FeedType.shared.rawValue + "/1.json?api-key=\(apiKey)"
-        guard let request = createRequest(for: url) else {
-            completion?(nil, NetworkError.invalidUrl)
-            return
-        }
-        executeRequest(request: request, completion: completion)
-    }
-
-    func fetchViewedArticles(completion: FeedCompletionClosure?) {
-        let url = baseUrl + FeedType.viewed.rawValue + "/1.json?api-key=\(apiKey)"
+    func fetchArticles(feedType: FeedType, completion: FeedCompletionClosure?) {
+        let url = baseUrl + feedType.rawValue + "/1.json?api-key=\(apiKey)"
         guard let request = createRequest(for: url) else {
             completion?(nil, NetworkError.invalidUrl)
             return

@@ -11,6 +11,7 @@ final class DashboardViewController: UIViewController {
 
     // MARK: - IBOutlets
     @IBOutlet private weak var tableView: UITableView?
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView?
 
     private lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -26,14 +27,23 @@ final class DashboardViewController: UIViewController {
 
     private var viewModel: DashboardViewModelProtocol?
     private var router: DashboardRouterProtocol?
-    private var dashboardDataSource: DashboardDataSource?
+    private var dashboardDataSource: DashboardDataSource? {
+        didSet {
+            tableView?.reloadData()
+            activityIndicator?.stopAnimating()
+            activityIndicator?.isHidden = true
+            view.isUserInteractionEnabled = true
+            guard refreshControl.isRefreshing else { return }
+            refreshControl.endRefreshing()
+        }
+    }
 
     // MARK: - View Lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
         configureRouter()
         bindObservers()
-        configureTableView()
+        configureView()
     }
 }
 
@@ -47,21 +57,24 @@ private extension DashboardViewController {
         guard let viewModel = viewModel else { return }
         viewModel.dashboardDataSource.bind { [weak self] dataSource in
             self?.dashboardDataSource = dataSource
-            self?.tableView?.reloadData()
-            guard let refreshControl = self?.refreshControl, refreshControl.isRefreshing else { return }
-            refreshControl.endRefreshing()
         }
     }
 
-    func configureTableView() {
+    func configureView() {
         tableView?.dataSource = self
         tableView?.register(cell: ArticleCell.self)
         tableView?.addSubview(refreshControl)
+        view.isUserInteractionEnabled = false
+        activityIndicator?.startAnimating()
+        activityIndicator?.isHidden = false
     }
 
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         guard let viewModel = viewModel else { return }
+        view.isUserInteractionEnabled = false
         viewModel.fetcDashboardArticles()
+        activityIndicator?.startAnimating()
+        activityIndicator?.isHidden = false
     }
 }
 

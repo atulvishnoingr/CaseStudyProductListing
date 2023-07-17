@@ -22,6 +22,7 @@ final class DashboardViewModel: DashboardViewModelProtocol {
     private var emailedArticles: [DashboardArticle]?
     private var sharedArticles: [DashboardArticle]?
     private var viewedArticles: [DashboardArticle]?
+
     // Top 3 articles
     private let articlesCount = 3
 

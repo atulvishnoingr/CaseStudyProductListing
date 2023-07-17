@@ -47,14 +47,16 @@ final class RegistrationViewController: UIViewController {
 
         router?.routeToDashboardScreen()
     }
+}
 
+private extension RegistrationViewController {
     // MARK: - Configuration
-    private func configureRouter() {
+    func configureRouter() {
         router?.viewController = self
     }
 
     // MARK: - bind ViewModel observers
-    private func bindObservers() {
+    func bindObservers() {
         guard let viewModel = viewModel else { return }
         viewModel.errorMessage.bind { [weak self] errorMessage in
             guard let errorMessage = errorMessage else { return }
@@ -62,7 +64,7 @@ final class RegistrationViewController: UIViewController {
         }
     }
 
-    private func showError(with errorMessage: String) {
+    func showError(with errorMessage: String) {
         let alert = UIAlertController(title: "Error", message: errorMessage, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
